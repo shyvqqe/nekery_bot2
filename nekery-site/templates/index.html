@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <p class="tag">Discord • Moderation • AI</p>
+  <h1>Бот, который держит сервер под контролем</h1>
+  <p class="sub">Модерация, автороли, AI-ответы и удобные комнаты в одном боте.</p>
+  <div class="row">
+    <a class="btn" href="/invite">Добавить бота</a>
+    <a class="btn ghost" href="/commands">Команды</a>
+  </div>
+  <div class="counters">
+    <div>Серверов <b id="guilds">...</b></div>
+    <div>Пользователей <b id="users">...</b></div>
+  </div>
+</section>
+<section id="features" class="grid">
+  <div class="card"><h3>Модерация</h3><p>Бан, мут, предупреждения.</p></div>
+  <div class="card"><h3>Автороли</h3><p>Роли новичкам сразу при входе.</p></div>
+  <div class="card"><h3>AI-диалоги</h3><p>Бот отвечает, когда его упомянули.</p></div>
+  <div class="card"><h3>Приватные комнаты</h3><p>Свои голосовые каналы за пару кликов.</p></div>
+</section>
+<script>
+fetch("/api/stats").then(r=>r.json()).then(d=>{
+  document.getElementById("guilds").textContent=d.guilds;
+  document.getElementById("users").textContent=d.users;
+});
+</script>
+{% endblock %}

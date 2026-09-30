@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nekerybot</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="/">Nekerybot</a>
+  <nav>
+    <a href="/#features">Возможности</a>
+    <a href="/commands">Команды</a>
+    <a href="/stats">Статистика</a>
+    {% if user %}<a href="/logout">{{ user.name }} · Выйти</a>{% else %}<a class="btn small" href="/login">Войти</a>{% endif %}
+  </nav>
+</header>
+{% block content %}{% endblock %}
+<footer>© 2026 Nekerybot · не аффилирован с Discord Inc.</footer>
+</body>
+</html>
