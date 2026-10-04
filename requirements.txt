@@ -1,8 +1,8 @@
-discord.py[voice]
-davey
-PyNaCl
-yt-dlp
+discord.py[voice]>=2.3.2
+PyNaCl>=1.5.0
+yt-dlp>=2024.12.13
 psutil
-groq
-flask
-static-ffmpeg
+openai>=1.66.0
+Flask
+static-ffmpeg>=3.0
+python-dotenv>=1.0.0
